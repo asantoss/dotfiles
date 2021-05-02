@@ -4,7 +4,8 @@
 [Based on this artciel](https://www.atlassian.com/git/tutorials/dotfiles)
 
 1. To use these dotfiles on a new machines please run the following commands from your terminal.
-    -  ```bash
+    -  
+ ```bash
 git clone --bare https://github.com/asantoss/dotfiles.git  $HOME/.cfg
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
