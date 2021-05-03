@@ -64,7 +64,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ambv/black'
 
 " Debugger Plugins
-Plug 'puremourning/vimspector'
+"Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 
 " THANKS BFREDL
@@ -77,7 +77,7 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'vuciv/vim-bujo'
 Plug 'tpope/vim-dispatch'
-Plug 'theprimeagen/vim-be-good'
+"Plug 'theprimeagen/vim-be-good'
 Plug 'gruvbox-community/gruvbox'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-projectionist'
