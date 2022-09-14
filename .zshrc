@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
  alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
  alias sfpull='sfdx force:source:retrieve -x manifest/package.xml'
 #
+alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -d'
+alias sfvalidate='sfdx force:source:deploy -x  package/package.xml --checkonly | sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "."'
 
 # CUSTOM EXPORTS
 prompt_context() {
@@ -116,4 +118,4 @@ prompt_context() {
  export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias sfvalidate=sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "."
+
