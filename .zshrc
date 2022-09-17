@@ -104,8 +104,13 @@ source $ZSH/oh-my-zsh.sh
  alias sfpull='sfdx force:source:retrieve -x manifest/package.xml'
 #
 alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -d'
-alias sfvalidate='sfdx force:source:deploy -x  package/package.xml --checkonly | sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "."'
+sfdxvalidator() {
+    target_branch=${1:?Please specify a target branch}
+    sfdx sgd:source:delta --to "HEAD" --from $target_branch --output "."
+    sfdx force:source:deploy -x ./package/package.xml -c 
+}
 
+alias sfvalidate='sfdxvalidator'
 # CUSTOM EXPORTS
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
