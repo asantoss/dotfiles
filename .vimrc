@@ -89,7 +89,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'gruvbox-community/gruvbox'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-projectionist'
-
+Plug 'alpertuna/vim-header'
 Plug 'sainnhe/gruvbox-material'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'flazz/vim-colorschemes'
@@ -97,6 +97,10 @@ Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
+" Auto Header
+let g:header_auto_add_header = 1
+let g:header_field_author = 'Alexander Santos'
+let g:header_field_author_email = 'asantos@lightningleap.us'
 
 " greatest remap ever
 vnoremap <leader>p "_dP
@@ -110,3 +114,4 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 autocmd vimenter * ++nested colorscheme gruvbox
+

@@ -103,11 +103,11 @@ source $ZSH/oh-my-zsh.sh
  alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
  alias sfpull='sfdx force:source:retrieve -x manifest/package.xml'
 #
-alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -d'
+alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -D'
 sfdxvalidator() {
     target_branch=${1:?Please specify a target branch}
     sfdx sgd:source:delta --to "HEAD" --from $target_branch --output "."
-    sfdx force:source:deploy -x ./package/package.xml -c 
+    sfdx force:source:deploy -x ./package/package.xml -c  
 }
 
 alias sfvalidate='sfdxvalidator'
