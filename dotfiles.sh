@@ -4,7 +4,7 @@
 # Date              : 29.01.2023
 # Last Modified Date: 29.01.2023
 # Last Modified By  : Alexander Santos <asantos@lightningleap.us>
-sudo apt install zsh git
+sudo apt install zsh git vim
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
