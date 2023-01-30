@@ -1,3 +1,10 @@
+```
+ File              : README.md
+ Author            : Alexander Santos <asantos@lightningleap.us>
+ Date              : 29.01.2023
+ Last Modified Date: 29.01.2023
+ Last Modified By  : Alexander Santos <asantos@lightningleap.us>
+```
 # WELCOME TO SANTOS DOTFILES
 
 
@@ -6,8 +13,9 @@
 1. To use these dotfiles on a new machines please run the following commands from your terminal.
     -  
  ```bash
- sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://github.com/asantoss/dotfiles/dotfiles.sh )"
 git clone --bare https://github.com/asantoss/dotfiles.git  $HOME/.cfg
+
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
@@ -21,8 +29,6 @@ if [ $? = 0 ]; then
 fi;
 config checkout
 config config status.showUntrackedFiles no
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 
