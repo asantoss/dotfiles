@@ -14,10 +14,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 git clone https://github.com/asantoss/dotfiles.git
 
-
-mv ~/.vimrc ~/.vimrc.bak
-mv ~/.bashrc ~/.bashrc.bak
-mv ~/.zshrc ~/.zshrc.bak
+:
 
 
 mv dotfiles/.vimrc ~/.vimrc
