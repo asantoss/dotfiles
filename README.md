@@ -13,7 +13,7 @@
 1. To use these dotfiles on a new machines please run the following commands from your terminal.
     -  
  ```bash
-sh -c "$(curl -fsSL https://github.com/asantoss/dotfiles/blob/main/dotfiles.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/asantoss/dotfiles/main/dotfiles.sh)"
 git clone --bare https://github.com/asantoss/dotfiles.git  $HOME/.cfg
 
 function config {
