@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Alexander Santos <asantos@lightningleap.us>
 # Date              : 19.10.2022
-# Last Modified Date: 04.11.2022
+# Last Modified Date: 24.01.2023
 # Last Modified By  : Alexander Santos <asantos@lightningleap.us>
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
  alias ohmyzsh="vim ~/.oh-my-zsh"
  alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
  alias sfpull='sfdx force:source:retrieve -x manifest/package.xml'
+ alias sfdeploy='sfdx force:source:deploy -x package/package.xml'
 #
 alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -D'
 sfdxvalidator() {
