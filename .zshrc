@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Alexander Santos <asantos@lightningleap.us>
 # Date              : 19.10.2022
-# Last Modified Date: 24.01.2023
+# Last Modified Date: 30.10.2023
 # Last Modified By  : Alexander Santos <asantos@lightningleap.us>
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -107,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="vim ~/.zshrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
  alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
- alias sfpull='sfdx force:source:retrieve -x manifest/package.xml'
+ alias sfpull='sfdx project retrieve start -x manifest/package.xml'
  alias sfdeploy='sfdx force:source:deploy -x package/package.xml'
 #
 alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -D'
@@ -118,6 +118,7 @@ sfdxvalidator() {
 }
 
 alias sfvalidate='sfdxvalidator'
+alias parsepackage='cat manifest/package.xml | ~/parsepackage.sh'
 # CUSTOM EXPORTS
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -133,3 +134,11 @@ prompt_context() {
 
 
 export PATH="/Users/alexandersantos/.deta/bin:$PATH"
+
+# bun completions
+[ -s "/Users/alexandersantos/.bun/_bun" ] && source "/Users/alexandersantos/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
