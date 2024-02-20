@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Alexander Santos <asantos@lightningleap.us>
 # Date              : 19.10.2022
-# Last Modified Date: 30.10.2023
+# Last Modified Date: 19.02.2024
 # Last Modified By  : Alexander Santos <asantos@lightningleap.us>
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
  alias sfpull='sfdx project retrieve start -x manifest/package.xml'
  alias sfdeploy='sfdx force:source:deploy -x package/package.xml'
 #
+alias sfdelta='sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "." -i .forceignore'
 alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -D'
 sfdxvalidator() {
     target_branch=${1:?Please specify a target branch}
@@ -142,3 +143,6 @@ export PATH="/Users/alexandersantos/.deta/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+
+# Created by `pipx` on 2023-12-01 20:57:08
+export PATH="$PATH:/Users/alexandersantos/.local/bin"
