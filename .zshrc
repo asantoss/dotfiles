@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Alexander Santos <asantos@lightningleap.us>
 # Date              : 19.10.2022
-# Last Modified Date: 19.02.2024
+# Last Modified Date: 03.12.2024
 # Last Modified By  : Alexander Santos <asantos@lightningleap.us>
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -146,3 +146,17 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Created by `pipx` on 2023-12-01 20:57:08
 export PATH="$PATH:/Users/alexandersantos/.local/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# pnpm
+export PNPM_HOME="/Users/alexandersantos/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="$HOME/.fastlane/bin:$PATH"
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+
