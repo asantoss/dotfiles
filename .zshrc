@@ -158,5 +158,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 export PATH="$HOME/.fastlane/bin:$PATH"
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
