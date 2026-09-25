@@ -2,7 +2,7 @@
 # File              : .zshrc
 # Author            : Alexander Santos <asantos@lightningleap.us>
 # Date              : 19.10.2022
-# Last Modified Date: 18.08.2025
+# Last Modified Date: 23.09.2026
 # Last Modified By  : Alexander Santos <asantos@lightningleap.us>
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -107,15 +107,16 @@ source $ZSH/oh-my-zsh.sh
  alias zshconfig="vim ~/.zshrc"
  alias ohmyzsh="vim ~/.oh-my-zsh"
  alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
- alias sfpull='sfdx project retrieve start -x manifest/package.xml'
+ alias sfpullprof='sfdx force:source:retrieve -x manifest/profile.xml '
+ alias sfpull='sf project retrieve start -x manifest/package.xml --ignore-conflicts'
  alias sfdeploy='sfdx force:source:deploy -x package/package.xml'
 #
 alias sfdelta='sfdx sgd:source:delta --to "HEAD" --from "HEAD^" --output "." -i .forceignore'
 alias cleangit='git branch -vv | grep ": gone]"|  grep -v "\*" | awk "{ print $1; }" | xargs -r git branch -D'
 sfdxvalidator() {
     target_branch=${1:?Please specify a target branch}
-    sfdx sgd:source:delta --to "HEAD" --from $target_branch --output "."
-    sfdx force:source:deploy -x ./package/package.xml -c  
+    sf sgd:source:delta --to "HEAD" --from $target_branch --output "."
+    sf project deploy validate -x ./package/package.xml   
 }
 
 alias sfvalidate='sfdxvalidator'
@@ -134,3 +135,25 @@ prompt_context() {
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+
+# bun completions
+[ -s "/home/alex/.bun/_bun" ] && source "/home/alex/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
+export DOCKER_BUILDKIT=1
+export claude=""
+
+alias claude="/home/alex/.claude/local/claude"
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
